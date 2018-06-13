@@ -19,7 +19,7 @@ Pull from Docker hub:
 docker pull vga101/meshcommander
 ```
 
-/or/
+*or*
 
 Build your own image:
 ```
@@ -41,7 +41,7 @@ To restart it (e.g. after rebooting your machine):
 `docker start meshcommander`
 
 
-/Note:/
+*Note:*
 When machines are added, that configuration is stored in the browser, so it will persist beyond the container lifetime, but get lost once you clear the browser settings or change to another browser. Use "Save..." to store the settings.
 
 
