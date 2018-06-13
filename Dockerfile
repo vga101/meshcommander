@@ -10,15 +10,15 @@ RUN apt-get -qy update \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# https://www.npmjs.com/package/meshcommander
 RUN mkdir /meshcommander \
     && cd /meshcommander \
-    && echo "MeshCommander version $MC_VERSION" > VERSION.TXT \
-    && wget -q "http://info.meshcentral.com/downloads/mdtk/meshcommandersource.zip" \
-    && unzip meshcommandersource.zip \
-    && cd MeshCommander/NodeJS \
-    && npm install
+    && npm install meshcommander \
+    && echo -n "Meshcommander version: " \
+    && npm info meshcommander version
 
 EXPOSE 3000
 
-WORKDIR /meshcommander/MeshCommander/NodeJS/
-CMD ["node", "commander.js"]
+WORKDIR /meshcommander/node_modules/meshcommander
+CMD ["node", "meshcommander", "--any"]
+# "--any" binds on all interfaces, not only 127.0.0.1
