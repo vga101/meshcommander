@@ -1,0 +1,14 @@
+version: '2.1'
+services:
+    meshcommander:
+        build: ./
+        image: vga101/meshcommander:latest
+        container_name: meshcommander
+        ports:
+            # hostip:hostport:containerport
+            - "127.0.0.1:3000:3000"
+        command:
+            - node
+            - meshcommander
+            - --any
+
