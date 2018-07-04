@@ -32,7 +32,7 @@ After any of these two options, run it:
 ```
 docker run -d -p 127.0.0.1:3000:3000 --name meshcommander vga101/meshcommander
 ```
-and then access it with your browser at <http://localhost:3000>.
+and then access it with your browser at <http://localhost:3000>. Please note that you need to restrict to `127.0.0.1:3000` explicitly if you don't want other people to be able to access and use MeshCommander on your machine!
 
 To stop the service:
 `docker stop meshcommander`
@@ -40,9 +40,8 @@ To stop the service:
 To restart it (e.g. after rebooting your machine):
 `docker start meshcommander`
 
+If you have `docker-compose` installed, you can also use the docker-compose file and start MeshCommander with `docker-compose up -d`, and `docker-compose down` to stop it.
 
 *Note:*
 When machines are added, that configuration is stored in the browser, so it will persist beyond the container lifetime, but get lost once you clear the browser settings or change to another browser. Use "Save..." to store the settings.
-
-
 
