@@ -24,7 +24,8 @@ docker tag $user/$imagename:lastbuilt $user/$imagename:$version
 # hint
 echo
 echo "* Run it with"
-echo "  docker run -d -p 127.0.0.1:3000:3000 --name meshcommander vga101/meshcommander'"
+echo "  docker run -d -p 127.0.0.1:3000:3000 --name meshcommander vga101/meshcommander:lastbuilt"
 echo "* If it behaves well, push with the following commands:"
 echo "  docker push $user/$imagename:$version"
+echo "  docker tag $user/$imagename:$version $user/$imagename:latest"
 echo "  docker push $user/$imagename:latest"
